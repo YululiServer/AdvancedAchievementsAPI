@@ -1,6 +1,8 @@
 package xyz.acrylicstyle;
 
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import xyz.acrylicstyle.utils.PlayerConfigAPI;
@@ -30,4 +32,16 @@ public interface AdvancedAchievementsAPI {
      */
     @Nullable
     PlayerConfigAPI getPlayerConfiguration(UUID uuid);
+
+    /**
+     * Gets AdvancedAchievement instance.
+     * @return AdvancedAchievement instance. May be null.
+     */
+    @Nullable
+    static AdvancedAchievementsAPI getInstance() {
+        RegisteredServiceProvider<AdvancedAchievementsAPI> provider = Bukkit.getServicesManager().getRegistration(AdvancedAchievementsAPI.class);
+        if (provider != null) {
+            return provider.getProvider();
+        } else return null;
+    }
 }
