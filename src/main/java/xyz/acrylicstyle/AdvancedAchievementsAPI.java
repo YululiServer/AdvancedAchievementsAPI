@@ -5,6 +5,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import util.Collection;
 import xyz.acrylicstyle.utils.PlayerConfigAPI;
 
 import java.util.UUID;
@@ -32,6 +33,19 @@ public interface AdvancedAchievementsAPI {
      */
     @Nullable
     PlayerConfigAPI getPlayerConfiguration(UUID uuid);
+
+    /**
+     * @param uuid The uuid of player
+     * @param config A player's configuration.
+     */
+    void setPlayerConfiguration(UUID uuid, PlayerConfigAPI config);
+
+    /**
+     * Gets all players configuration.
+     * @return All players configuration mapped by their UUID..
+     */
+    @NotNull
+    Collection<UUID, PlayerConfigAPI> getPlayerConfiguration();
 
     /**
      * Gets AdvancedAchievement instance.
