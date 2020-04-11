@@ -37,12 +37,11 @@ public interface AchievementAPI {
     enum Unlock {
         ITEM,
         JOIN,
-        @Deprecated
-        MINING,
         KILL,
         LOCATION,
         BLOCK_PLACE,
         BLOCK_BREAK,
+        PLAY_TIME,
         NEVER,
     }
 
@@ -51,6 +50,7 @@ public interface AchievementAPI {
         private Collection<Material2, Integer> miningPoints = null;
         private Collection<Material2, Integer> blocks = null;
         private Collection<EntityType, Integer> killPoints = null;
+        private int playTime = Integer.MAX_VALUE; // in seconds
         private Location location = null;
 
         public UnlockCondition setItems(Collection<Material2, Integer> items) {
@@ -78,6 +78,11 @@ public interface AchievementAPI {
             return this;
         }
 
+        public UnlockCondition setPlayTime(int playTime) {
+            this.playTime = playTime;
+            return this;
+        }
+
         public Collection<Material2, Integer> getMiningPoints() {
             return miningPoints;
         }
@@ -96,6 +101,10 @@ public interface AchievementAPI {
 
         public Location getLocation() {
             return location;
+        }
+
+        public int getPlayTime() {
+            return playTime;
         }
     }
 }
