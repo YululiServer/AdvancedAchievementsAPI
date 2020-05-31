@@ -3,14 +3,18 @@ package xyz.acrylicstyle.utils;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.Inventory;
+import org.jetbrains.annotations.NotNull;
 import util.CollectionList;
 import util.ICollectionList;
 import xyz.acrylicstyle.commons.AchievementAPI;
 
 import java.util.List;
+import java.util.UUID;
 
 @SuppressWarnings("unused")
 public interface PlayerConfigAPI {
+    @NotNull
+    UUID getUniqueId();
     void addMiningPoints(Material material);
     int getMiningPoints(Material2 material);
     int getMiningPoints();
