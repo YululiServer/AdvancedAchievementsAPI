@@ -42,6 +42,8 @@ public interface AchievementAPI {
         BLOCK_PLACE,
         BLOCK_BREAK,
         PLAY_TIME,
+        DAMAGE_TAKEN,
+        DAMAGE_DEALT,
         NEVER,
     }
 
@@ -50,7 +52,7 @@ public interface AchievementAPI {
         private Collection<Material2, Integer> miningPoints = null;
         private Collection<Material2, Integer> blocks = null;
         private Collection<EntityType, Integer> killPoints = null;
-        private int playTime = Integer.MAX_VALUE; // in seconds
+        private int data = Integer.MAX_VALUE; // it was playTime previously
         private Location location = null;
 
         public UnlockCondition setItems(Collection<Material2, Integer> items) {
@@ -78,8 +80,8 @@ public interface AchievementAPI {
             return this;
         }
 
-        public UnlockCondition setPlayTime(int playTime) {
-            this.playTime = playTime;
+        public UnlockCondition setData(int data) {
+            this.data = data;
             return this;
         }
 
@@ -103,8 +105,8 @@ public interface AchievementAPI {
             return location;
         }
 
-        public int getPlayTime() {
-            return playTime;
+        public int getData() {
+            return data;
         }
     }
 }
