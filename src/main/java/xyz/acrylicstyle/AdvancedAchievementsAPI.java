@@ -24,7 +24,12 @@ public interface AdvancedAchievementsAPI {
      * @return Their extra inventory
      */
     @NotNull
-    Inventory getExtraInventory(UUID uuid);
+    Inventory getExtraInventory(@NotNull UUID uuid);
+
+    /**
+     * Sets player's extra inventory.
+     */
+    void setExtraInventory(@NotNull UUID player, @NotNull Inventory inventory);
 
     /**
      * Gets player's configuration.
@@ -32,13 +37,13 @@ public interface AdvancedAchievementsAPI {
      * @return A player's configuration.
      */
     @Nullable
-    PlayerConfigAPI getPlayerConfiguration(UUID uuid);
+    PlayerConfigAPI getPlayerConfiguration(@NotNull UUID uuid);
 
     /**
      * @param uuid The uuid of player
      * @param config A player's configuration.
      */
-    void setPlayerConfiguration(UUID uuid, PlayerConfigAPI config);
+    void setPlayerConfiguration(@NotNull UUID uuid, @NotNull PlayerConfigAPI config);
 
     /**
      * Gets all players configuration.
