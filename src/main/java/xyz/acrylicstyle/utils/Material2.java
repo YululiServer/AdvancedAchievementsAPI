@@ -1012,6 +1012,7 @@ public enum Material2 {
     CRIMSON_HYPHAE,
     WARPED_HYPHAE,
     BLACKSTONE,
+    SHROOMLIGHT,
     ;
     //</editor-fold>
 }
