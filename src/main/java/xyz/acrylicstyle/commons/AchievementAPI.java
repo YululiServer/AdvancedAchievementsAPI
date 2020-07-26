@@ -134,16 +134,17 @@ public interface AchievementAPI {
 
 
     enum Unlock {
-        ITEM,
-        JOIN,
-        KILL,
-        LOCATION,
-        BLOCK_PLACE,
-        BLOCK_BREAK,
-        PLAY_TIME,
-        DAMAGE_TAKEN,
-        DAMAGE_DEALT,
-        NEVER,
+        ITEM, // => items
+        JOIN, // => nothing
+        KILL, // => killPoints
+        LOCATION, // => location
+        BLOCK_PLACE, // => blocks
+        BLOCK_BREAK, // => miningPoints
+        PLAY_TIME, // => data
+        DAMAGE_TAKEN, // => data
+        DAMAGE_DEALT, // => data
+        HOE, // => data
+        NEVER, // => nothing
     }
 
     class UnlockCondition {
