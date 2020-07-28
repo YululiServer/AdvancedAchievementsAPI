@@ -16,10 +16,10 @@ public interface PlayerConfigAPI {
     @NotNull
     UUID getUniqueId();
     void addMiningPoints(Material material);
-    int getMiningPoints(Material2 material);
+    int getMiningPoints(Material material);
     int getMiningPoints();
     void addBlocks(Material material);
-    int getBlocks(Material2 material);
+    int getBlocks(Material material);
     int getBlocks();
     void addKillPoints(EntityType entity);
     int getKillPoints(EntityType entity);

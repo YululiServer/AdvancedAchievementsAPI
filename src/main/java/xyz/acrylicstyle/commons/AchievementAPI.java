@@ -11,7 +11,6 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import util.Collection;
 import util.CollectionList;
-import xyz.acrylicstyle.utils.Material2;
 
 @SuppressWarnings("unused")
 public interface AchievementAPI {
@@ -144,29 +143,29 @@ public interface AchievementAPI {
         DAMAGE_TAKEN, // => data
         DAMAGE_DEALT, // => data
         HOE, // => data
-        ITEM_BREAK, // => data
+        ITEM_BREAK, // => items
         NEVER, // => nothing
     }
 
     class UnlockCondition {
-        private Collection<Material2, Integer> items = null;
-        private Collection<Material2, Integer> miningPoints = null;
-        private Collection<Material2, Integer> blocks = null;
+        private Collection<Material, Integer> items = null;
+        private Collection<Material, Integer> miningPoints = null;
+        private Collection<Material, Integer> blocks = null;
         private Collection<EntityType, Integer> killPoints = null;
         private int data = Integer.MAX_VALUE; // it was playTime previously
         private Location location = null;
 
-        public UnlockCondition setItems(Collection<Material2, Integer> items) {
+        public UnlockCondition setItems(Collection<Material, Integer> items) {
             this.items = items == null || items.size() == 0 ? null : items;
             return this;
         }
 
-        public UnlockCondition setMiningPoints(Collection<Material2, Integer> points) {
+        public UnlockCondition setMiningPoints(Collection<Material, Integer> points) {
             this.miningPoints = points == null || points.size() == 0 ? null : points;
             return this;
         }
 
-        public UnlockCondition setBlocks(Collection<Material2, Integer> points) {
+        public UnlockCondition setBlocks(Collection<Material, Integer> points) {
             this.blocks = points == null || points.size() == 0 ? null : points;
             return this;
         }
@@ -186,15 +185,15 @@ public interface AchievementAPI {
             return this;
         }
 
-        public Collection<Material2, Integer> getMiningPoints() {
+        public Collection<Material, Integer> getMiningPoints() {
             return miningPoints;
         }
 
-        public Collection<Material2, Integer> getBlocks() {
+        public Collection<Material, Integer> getBlocks() {
             return blocks;
         }
 
-        public Collection<Material2, Integer> getItems() {
+        public Collection<Material, Integer> getItems() {
             return items;
         }
 
