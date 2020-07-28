@@ -39,4 +39,10 @@ public interface PlayerConfigAPI {
     void setInventory(Inventory inventory);
     boolean hasInventory();
     Inventory getInventory();
+    int getPlayTime();
+    void setPlayTime(int playTime);
+    int getHoes();
+    void setHoes(int hoes);
+    long getItemBreaks(Material material);
+    void addItemBreaks(Material material);
 }

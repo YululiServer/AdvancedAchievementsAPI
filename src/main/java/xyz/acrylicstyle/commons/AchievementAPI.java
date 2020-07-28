@@ -144,6 +144,7 @@ public interface AchievementAPI {
         DAMAGE_TAKEN, // => data
         DAMAGE_DEALT, // => data
         HOE, // => data
+        ITEM_BREAK, // => data
         NEVER, // => nothing
     }
 
