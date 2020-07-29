@@ -12,7 +12,7 @@ class AchievementRegistererAPIHolder {
     }
 
     public static void setInstance(@NotNull AchievementRegisterer instance) {
-        if (AchievementRegistererAPIHolder.instance != null) throw new IllegalArgumentException("Cannot redefine instance");
+        // do not throw exception like "cannot redefine instance" or it will throw error on /aa reload
         AchievementRegistererAPIHolder.instance = Validate.notNull(instance, "instance cannot be null");
     }
 }
