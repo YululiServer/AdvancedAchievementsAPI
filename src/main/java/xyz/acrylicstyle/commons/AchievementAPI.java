@@ -157,12 +157,13 @@ public interface AchievementAPI {
         DAMAGE_DEALT, // => data
         HOE, // => data
         ITEM_BREAK, // => items
-        CRAFTING, // => items
+        CRAFTING, // => crafts
         NEVER, // => nothing
     }
 
     class UnlockCondition {
         private Collection<Material, Integer> items = null;
+        private Collection<Material, Integer> crafts = null;
         private Collection<Material, Integer> miningPoints = null;
         private Collection<Material, Integer> blocks = null;
         private Collection<EntityType, Integer> killPoints = null;
@@ -171,6 +172,11 @@ public interface AchievementAPI {
 
         public UnlockCondition setItems(@Nullable Collection<Material, Integer> items) {
             this.items = items == null || items.size() == 0 ? null : items;
+            return this;
+        }
+
+        public UnlockCondition setCrafts(@Nullable Collection<Material, Integer> crafts) {
+            this.crafts = crafts == null || crafts.size() == 0 ? null : crafts;
             return this;
         }
 
@@ -209,6 +215,10 @@ public interface AchievementAPI {
 
         public Collection<Material, Integer> getItems() {
             return items;
+        }
+
+        public Collection<Material, Integer> getCrafts() {
+            return crafts;
         }
 
         public Collection<EntityType, Integer> getKillPoints() {
