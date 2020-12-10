@@ -15,7 +15,7 @@ public class AchievementEvent extends Event implements Cancellable {
     private AchievementAPI achievement;
     private Player player;
 
-    public AchievementEvent(AchievementAPI what, Player who) {
+    public AchievementEvent(@NotNull AchievementAPI what, @NotNull Player who) {
         this.achievement = Objects.requireNonNull(what);
         this.player = Objects.requireNonNull(who);
     }

@@ -15,34 +15,42 @@ import java.util.UUID;
 public interface PlayerConfigAPI {
     @NotNull
     UUID getUniqueId();
-    void addMiningPoints(Material material);
-    int getMiningPoints(Material material);
+    void addMiningPoints(@NotNull Material material);
+    int getMiningPoints(@NotNull Material material);
     int getMiningPoints();
-    void addBlocks(Material material);
-    int getBlocks(Material material);
+    void addBlocks(@NotNull Material material);
+    int getBlocks(@NotNull Material material);
     int getBlocks();
-    void addKillPoints(EntityType entity);
-    int getKillPoints(EntityType entity);
+    void addKillPoints(@NotNull EntityType entity);
+    int getKillPoints(@NotNull EntityType entity);
     int getKillPoints();
-    void setUnlocked(AchievementAPI achievement);
-    void revokeAchievement(AchievementAPI achievement);
-    boolean isUnlocked(AchievementAPI achievement);
-    void removePendingReward(AchievementAPI achievement, int index);
-    void addPendingReward(AchievementAPI achievement);
+    void setUnlocked(@NotNull AchievementAPI achievement);
+    void revokeAchievement(@NotNull AchievementAPI achievement);
+    boolean isUnlocked(@NotNull AchievementAPI achievement);
+    void removePendingReward(@NotNull AchievementAPI achievement, int index);
+    void addPendingReward(@NotNull AchievementAPI achievement);
+    @NotNull
     ICollectionList<String> getPendingRewards();
+    @NotNull
     List<String> getUnlockedAchievementsString();
+    @NotNull
     CollectionList<AchievementAPI> getUnlockedAchievements();
-    boolean hasUnlocked(AchievementAPI achievement);
+    boolean hasUnlocked(@NotNull AchievementAPI achievement);
     void setLastFly(double time);
     double getLastFly();
     boolean canFly();
-    void setInventory(Inventory inventory);
+    void setInventory(@NotNull Inventory inventory);
     boolean hasInventory();
+    @NotNull
     Inventory getInventory();
     int getPlayTime();
     void setPlayTime(int playTime);
     int getHoes();
     void setHoes(int hoes);
-    long getItemBreaks(Material material);
-    void addItemBreaks(Material material);
+    long getItemBreaks(@NotNull Material material);
+    void addItemBreaks(@NotNull Material material);
+    void setItemBreaks(@NotNull Material material, long amount);
+    long getCrafting(@NotNull Material material);
+    void addCrafting(@NotNull Material material);
+    void setCrafting(@NotNull Material material, long amount);
 }

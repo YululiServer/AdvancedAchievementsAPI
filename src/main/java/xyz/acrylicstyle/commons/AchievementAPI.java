@@ -9,6 +9,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import util.Collection;
 import util.CollectionList;
 
@@ -47,6 +48,7 @@ public interface AchievementAPI {
      * Returns the defined description of the this achievement.
      * @return the description
      */
+    @NotNull
     String getDescription();
 
     /**
@@ -58,43 +60,54 @@ public interface AchievementAPI {
      * Returns the full name of the achievement.
      * Returns name with dark purple if challenge, green if not.
      */
+    @NotNull
     String getFullName();
 
     /**
      * Returns the full name with hover text (TextComponent).
      * @return the TextComponent that will be sent to the player when unlocked.
      */
+    @NotNull
     TextComponent getFullNameWithHoverText();
 
     /**
      * Returns the list of the unlock enum, the achievement will be unlocked if all conditions were met.
      */
+    @NotNull
     CollectionList<Unlock> getUnlock();
 
     /**
      * Returns the unlock condition.
      * @return the unlock condition
      */
+    @NotNull
     UnlockCondition getCondition();
 
     /**
      * Returns the material that will be shown on the achievement list.
      * @return the material
      */
+    @NotNull
     Material getMaterial();
 
     /**
      * Returns the item that will be shown on the achievement list.
      * @return the item
      */
+    @NotNull
     ItemStack getItemStack();
 
     /**
      * Returns the list of the items that will be rewarded on unlock.
      * @return the item list
      */
+    @NotNull
     CollectionList<ItemStack> getReward();
+
+    @Nullable
     String getRewardParticle();
+
+    @Nullable
     String getRewardParticleType();
 
     /**
@@ -144,6 +157,7 @@ public interface AchievementAPI {
         DAMAGE_DEALT, // => data
         HOE, // => data
         ITEM_BREAK, // => items
+        CRAFTING, // => items
         NEVER, // => nothing
     }
 
@@ -155,27 +169,27 @@ public interface AchievementAPI {
         private int data = Integer.MAX_VALUE; // it was playTime previously
         private Location location = null;
 
-        public UnlockCondition setItems(Collection<Material, Integer> items) {
+        public UnlockCondition setItems(@Nullable Collection<Material, Integer> items) {
             this.items = items == null || items.size() == 0 ? null : items;
             return this;
         }
 
-        public UnlockCondition setMiningPoints(Collection<Material, Integer> points) {
+        public UnlockCondition setMiningPoints(@Nullable Collection<Material, Integer> points) {
             this.miningPoints = points == null || points.size() == 0 ? null : points;
             return this;
         }
 
-        public UnlockCondition setBlocks(Collection<Material, Integer> points) {
+        public UnlockCondition setBlocks(@Nullable Collection<Material, Integer> points) {
             this.blocks = points == null || points.size() == 0 ? null : points;
             return this;
         }
 
-        public UnlockCondition setKillPoints(Collection<EntityType, Integer> killPoints) {
+        public UnlockCondition setKillPoints(@Nullable Collection<EntityType, Integer> killPoints) {
             this.killPoints = killPoints == null || killPoints.size() == 0 ? null : killPoints;
             return this;
         }
 
-        public UnlockCondition setLocation(Location location) {
+        public UnlockCondition setLocation(@Nullable Location location) {
             this.location = location;
             return this;
         }

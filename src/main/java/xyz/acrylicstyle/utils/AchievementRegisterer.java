@@ -1,5 +1,6 @@
 package xyz.acrylicstyle.utils;
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import util.CollectionList;
 import xyz.acrylicstyle.commons.AchievementAPI;
@@ -14,6 +15,7 @@ public interface AchievementRegisterer {
     /**
      * Returns the current active instance.
      */
+    @Contract(pure = true)
     @NotNull
     static AchievementRegisterer getInstance() {
         return AchievementRegistererAPIHolder.getInstance();
