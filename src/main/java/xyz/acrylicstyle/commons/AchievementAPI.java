@@ -101,7 +101,7 @@ public interface AchievementAPI {
      * Returns the list of the items that will be rewarded on unlock.
      * @return the item list
      */
-    @NotNull
+    @Nullable
     CollectionList<ItemStack> getReward();
 
     @Nullable
