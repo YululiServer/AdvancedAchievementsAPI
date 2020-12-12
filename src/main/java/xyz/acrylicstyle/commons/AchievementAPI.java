@@ -111,6 +111,12 @@ public interface AchievementAPI {
     String getRewardParticleType();
 
     /**
+     * Whether if removes items after they completed the achievement.
+     * Only used when unlock type is {@link Unlock#ITEM}.
+     */
+    boolean isRemoveItems();
+
+    /**
      * Returns true if reveals unlock condition if player hasn't unlocked.
      */
     boolean isRevealCondition();
@@ -133,10 +139,16 @@ public interface AchievementAPI {
     boolean isHidden();
 
     /**
-     * Unlocks the achievement immediately.
+     * Unlocks the achievement immediately. And removes items defined on {@link UnlockCondition#getItems()}.
      * @param player the online player. messages will be sent and notified.
      */
     void unlock(Player player);
+
+    /**
+     * Unlocks the achievement immediately.
+     * @param player the online player. messages will be sent and notified.
+     */
+    void unlock(Player player, boolean removeItem);
 
     /**
      * Unlocks the achievement immediately.
