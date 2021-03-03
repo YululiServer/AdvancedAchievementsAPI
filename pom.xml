@@ -21,9 +21,12 @@
     </build>
     <repositories>
         <repository>
-            <id>acrylicstyle-repo</id>
-            <name>Acrylic Style's Repository2</name>
+            <id>acrylic-repo</id>
             <url>https://repo.acrylicstyle.xyz/</url>
+        </repository>
+        <repository>
+            <id>acrylic-repo2</id>
+            <url>https://repo2.acrylicstyle.xyz/</url>
         </repository>
         <repository>
             <id>spigot-repo</id>
@@ -34,7 +37,7 @@
         <dependency>
             <groupId>xyz.acrylicstyle</groupId>
             <artifactId>java-util-all</artifactId>
-            <version>0.11.43</version>
+            <version>0.14.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
